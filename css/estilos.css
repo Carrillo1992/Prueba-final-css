@@ -1,0 +1,117 @@
+@font-face {
+
+}
+body{
+  background: black;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+.contenido{
+  width: 900px;
+}
+img{
+  box-shadow: 2px 2px #02010a;
+}
+ul{
+  list-style: none;
+}
+/*Menu principal*/
+header{
+  background: #5b7989;
+  width: 100%;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-sizing: border-box;
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+}
+h1{
+  color: white;
+  text-shadow: 2px 2px #02010a;
+  position: relative;
+  left: 0%
+}
+.menu{
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+  position: relative;
+  right: 0%;
+}
+a.inicio:link{
+  text-decoration: none;
+}
+a.paisajes:link{
+  text-decoration: none;
+}
+
+a.retratos:link{
+  text-decoration: none;
+}
+/*indice*/
+#cuerpo{
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+
+}
+.principal{
+  background-color: #82c3a6;
+  padding: 10%;
+}
+.prin{
+  width: 100%;
+}
+.secundario{
+  background-color: #d5c75f;
+  border: 1px;
+  padding: 10%;
+  overflow: hidden;
+}
+.sec1{
+  float: left;
+  left: 5%;
+  width: 45%;
+}
+.sec2{
+  float: right;
+  right: 5%;
+  width: 45%;
+}
+/*Retratos y paisajes*/
+.cuerpo2{
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color:  #d5c75f
+
+}
+.cuerpo2 img{
+  width: 33%;
+  position: relative;
+}
+/* Pie de pagina*/
+footer{
+  width: 100%;
+  background-color: #C6d5c5;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+
+
+}
+
+[title~=red]{
+  width: 25px;
+  border-radius: 20%;
+}
+
+
+footer{
+  -webkit-column-count: 4; /* Chrome, Safari, Opera */
+  -moz-column-count: 4; /* Firefox */
+  column-count: 4;
+}
