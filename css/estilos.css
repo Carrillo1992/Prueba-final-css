@@ -1,10 +1,19 @@
 @font-face {
-
+  font-family: 'Dancing Script', cursive;
 }
 body{
   background: black;
   padding-right: 10%;
   padding-left: 10%;
+  font-family: 'Dancing Script', cursive;
+}
+header ul li a:link{
+  font-family: 'Dancing Script', cursive;
+  color: white;
+}
+a:visited{
+  font-family: 'Dancing Script', cursive;
+  color: white;
 }
 .contenido{
   width: 900px;
@@ -23,22 +32,31 @@ header{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   box-sizing: border-box;
-  -webkit-column-count: 2; /* Chrome, Safari, Opera */
-  -moz-column-count: 2; /* Firefox */
-  column-count: 2;
+  display: flex;
+  display: -moz-flex;
+  -webkit-flex-flow: row-reverse;
 }
 h1{
   color: white;
   text-shadow: 2px 2px #02010a;
-  position: relative;
-  left: 0%
+  flex: 2;
+  order: 2
+
 }
 .menu{
-  -webkit-column-count: 3; /* Chrome, Safari, Opera */
-  -moz-column-count: 3; /* Firefox */
-  column-count: 3;
-  position: relative;
-  right: 0%;
+
+  flex:1 ;
+  order: 1;
+  display: flex;
+  display: -moz-flex;
+  -webkit-flex-flow: row wrap;
+  padding-top: 15px;
+}
+.hola{
+  text-align: center;
+}
+li > a{
+  margin: 10px;
 }
 a.inicio:link{
   text-decoration: none;
@@ -46,20 +64,18 @@ a.inicio:link{
 a.paisajes:link{
   text-decoration: none;
 }
-
 a.retratos:link{
   text-decoration: none;
 }
 /*indice*/
 #cuerpo{
-  width: 100%;
   overflow: hidden;
   box-sizing: border-box;
 
 }
 .principal{
   background-color: #82c3a6;
-  padding: 10%;
+  padding: 5%;
 }
 .prin{
   width: 100%;
@@ -67,30 +83,84 @@ a.retratos:link{
 .secundario{
   background-color: #d5c75f;
   border: 1px;
-  padding: 10%;
+  padding: 5%;
   overflow: hidden;
+  display: flex;
+  display: -moz-flex;
+  -webkit-flex-flow: row wrap;
+  align-self: center;
 }
 .sec1{
-  float: left;
-  left: 5%;
-  width: 45%;
+  width: 30%;
+  height: 30%;
+  flex: 1;
+  -webkit-flex: 1;
+  -webkit-order: 1;
+  margin: 5px;
 }
 .sec2{
-  float: right;
-  right: 5%;
-  width: 45%;
+  width: 30%;
+  height: 30%;
+  flex: 1;
+  -webkit-flex: 1;
+  -webkit-order: 3;
+  margin: 5px;
+}
+.sec1:hover{
+  box-shadow: 2px 2px #82c3a6;
+  animation: rotar 2s;
+}
+@keyframes rotar{
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(10deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+.sec2:hover{
+  box-shadow: 2px 2px #82c3a6;
+  animation: mover 2s;
+}
+@keyframes mover{
+  0%{
+    transform: translate(0px, 0px);
+  }
+  50%{
+    transform: translate(20px, 5px);
+  }
+  100%{
+    transform: translate(0px, 0px);
+  }
 }
 /*Retratos y paisajes*/
 .cuerpo2{
-  width: 100%;
+  background-color: #d5c75f;
+  border: 1px;
+  padding: 15px;
   box-sizing: border-box;
   overflow: hidden;
-  background-color:  #d5c75f
-
+  display: flex;
+  display: -moz-flex;
+  -webkit-flex-flow: row wrap;
 }
 .cuerpo2 img{
-  width: 33%;
-  position: relative;
+  width: 32%;
+  height: 32%;
+  margin: 5px;
+  align-self: space-around;
+}
+.img1{
+  filter: blur(10px);
+}
+.img2, .img4, .img6{
+  filter: grayscale(100%);
+}
+.img3{
+  filter: sepia(90%);
 }
 /* Pie de pagina*/
 footer{
@@ -99,19 +169,96 @@ footer{
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-sizing: border-box;
-  padding: 20px;
-
-
+  padding: 10px;
+  display: flex;
+  display: -moz-flex;
+  -webkit-flex-flow: row wrap;
 }
-
 [title~=red]{
-  width: 25px;
-  border-radius: 20%;
+  width: 15%;
+  float:left;
+  margin: 10px;
+
+}
+.contacto{
+  flex: 1;
+  -webkit-flex: 1;
+  -webkit-order: 1;
+}
+.terminos{
+  flex: 1;
+  -webkit-flex: 1;
+  -webkit-order: 2;
+}
+.redes{
+  flex: 1;
+  -webkit-flex: 1;
+  -webkit-order: 3;
+}
+.derechos{
+  flex: 1;
+  -webkit-flex: 1;
+  -webkit-order: 4;
 }
 
 
-footer{
-  -webkit-column-count: 4; /* Chrome, Safari, Opera */
-  -moz-column-count: 4; /* Firefox */
-  column-count: 4;
+@media all and (max-width: 900px) {
+  .contenido{
+    width: 100%;
+  }
+  header{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    display: -moz-flex;
+    -webkit-flex-flow: column-reverse;
+    text-align: center;
+    animation: slidein 2s;
+  }
+
+  #cuerpo{
+    width:100%;
+  }
+  .cuerpo2 img{
+    display: block;
+    width: 100%;
+  }
+  .prin{
+    width: 100%;
+  }
+  [class^=sec]{
+    width: 100%;
+  }
+  footer{
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+[title~=red]{
+  width: 10%;
+  float: none;
+}
+  .contacto{
+    width: 100%;
+  }
+  .terminos{
+    width: 100%;
+  }
+  .redes{
+    width: 100%;
+  }
+  .derechos{
+    width: 100%;
+  }
+  @keyframes slidein{
+  0%{
+    margin-top: 150%;
+  }
+  60%{
+    margin-top: -5%;
+  }
+  100%{
+    margin-top: 0%;
+  }
+  }
 }
